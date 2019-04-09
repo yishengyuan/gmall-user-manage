@@ -23,13 +23,31 @@ public class UserInfoController {
 
     @RequestMapping("update")
     @ResponseBody
-    public  String updateUserInfo(){
-         UserInfo userInfo = new UserInfo();
-         userInfo.setId("6");
-         userInfo.setName("hah");
-         userInfo.setLoginName("atguigu");
-         userService.updateUser(userInfo);
-         return  "ok";
+    public String updateUserInfo() {
+        UserInfo userInfo = new UserInfo();
+        userInfo.setId("6");
+        userInfo.setName("hah");
+        userInfo.setLoginName("atguigu");
+        userService.updateUser(userInfo);
+        return "ok";
+    }
+
+    @RequestMapping("update1")
+    @ResponseBody
+    public String updateUserInfo1() {
+        UserInfo userInfo = new UserInfo();
+        userInfo.setId("6");
+        userInfo.setLoginName("boy -1018");
+        userInfo.setLoginName("atguigu");
+        userService.updateUser(userInfo);
+        return "ok";
+    }
+
+    @RequestMapping("del")
+    @ResponseBody
+    public String deleteUser(UserInfo userInfo) {
+        userService.delUser(userInfo);
+        return "ok";
     }
 
 }
